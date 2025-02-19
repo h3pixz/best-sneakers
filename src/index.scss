@@ -3,7 +3,7 @@ body {
   font-family: 'Montserrat';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e7f6ff;
+  background-color: #ffffff;
   
 }
 
@@ -39,6 +39,10 @@ header{
   border-radius: 26px;
   margin-left: 150px;
 
+  .kross{
+    margin-top: 27px;
+  }
+
  h5{
   font-weight: 500;
   font-size: 16px;
@@ -48,9 +52,26 @@ header{
  
  .cena{
   margin: 0 14px 0 14px;
+
+  span{
+    font-size: 16px;
+    color: #BDBDBD;
+    font-weight: 500;
+  }
+
+  h4{
+    font-size: 20px;
+    font-weight: 900;
+  }
  }
  
  h4{
   margin: 0;
  }
+
+ .plus{
+  margin-right: 29px;
+  cursor: pointer;
+ }
+
 }
