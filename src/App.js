@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 function App() {
   return (
@@ -28,6 +28,23 @@ function App() {
 
       <div className="content">
         <h1>Все кроссовки</h1>
+
+       
+          <div className="card">
+            <div className="d-flex align-center flex-column">
+              <img height={95} width={196} src="./1.png" alt=""></img>
+              <h5>Мужские кроссовки<br></br> Nike Air Force</h5>
+            </div>
+            
+
+              <div className="d-flex justify-between">
+                <div className="cena">
+                  <span>ЦЕНА:</span>
+                  <h4>$115</h4>
+                </div>
+                <img src="./plus.svg" alt=""></img>
+          </div>
+        </div>
       </div>
     </div>
   );
