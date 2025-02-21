@@ -4,7 +4,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
-  
 }
 
 header{
@@ -24,9 +23,9 @@ header{
 }
 
 .content{
+  margin: 0px 150px 0px 150px;
   h1{
     font-size: 26px;
-    margin-left: 150px;
     font-weight: 600;
     padding: 25px 0 25px;
   }
@@ -37,7 +36,11 @@ header{
   height: 280px;
   border: 1px solid #BFBFBF;
   border-radius: 26px;
-  margin-left: 150px;
+  transition: box-shadow 0.15s ease-in-out;
+
+  &:hover{
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.05);
+  }
 
   .kross{
     margin-top: 27px;
@@ -47,7 +50,7 @@ header{
   font-weight: 500;
   font-size: 16px;
   width: 230px;
-  margin: 25px 0 25px 0;
+  margin-left: 14px;
  }
  
  .cena{
