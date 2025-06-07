@@ -1,6 +1,13 @@
 import React from 'react';
 import Card from './Card';
 import Header from './Header';
+
+
+const arr = [
+  { name: 'Мужские кроссовки Nike Air Force', price: '$115'},
+  { name: 'Мужские кроссовки Nike Air Max 1 Premium', price: '$160'}
+];
+
 function App() {
   return (
     <>
@@ -8,11 +15,11 @@ function App() {
       <div className="content">
         <h1>Все кроссовки</h1>
         <div className="d-flex justify-between">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          
+          {
+            arr.map((obj) => (
+              <Card />
+            ))
+          }
         </div>
       </div>
     </>
