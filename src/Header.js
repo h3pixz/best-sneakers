@@ -20,7 +20,7 @@ function Header() {
                 <ul className="d-flex align-center">
                     <li className="mr-40">
                         <img height={15} width={15} src="./love.svg" alt=""></img>
-                        <span>Избранное</span>
+                        <span className="cu-p">Избранное</span>
                     </li>
                     <img width={34} height={34} src="./user.png" alt=""></img>
                 </ul>
