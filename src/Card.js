@@ -8,7 +8,7 @@ function Card(props) {
   const onClickPlus = () => {
     setIsAdded(!isAdded);
   };
- 
+
 
   return (
     <div className={styles.card}>

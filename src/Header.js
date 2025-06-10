@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header() {
+function Header(props) {
     return (
         <div className="wrapper clear">
             <header className="d-flex justify-between align-center">
@@ -18,7 +18,7 @@ function Header() {
                 </div>
 
                 <ul className="d-flex align-center">
-                    <li className="mr-40">
+                    <li className="mr-40" onClick={props.onClickCard}>
                         <img height={15} width={15} src="./love.svg" alt=""></img>
                         <span className="cu-p">Избранное</span>
                     </li>
