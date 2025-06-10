@@ -1,28 +1,38 @@
 import React from 'react';
 import Card from './Card';
 import Header from './Header';
+import Wrapper from './Wrapper'
 
-
-const arr = [
-  { name: 'Мужские кроссовки Nike Air Force', price: '$115'},
-  { name: 'Мужские кроссовки Nike Air Max 1 Premium', price: '$160'}
-];
+const arr = [];
 
 function App() {
+  const [items, setItems] = React.useState([]);
+  const [cardOpened, setCardOpened] = React.useState(false);
+
+  //берем все айтемы с BackEnd
+  React.useEffect(() => {
+    fetch('https://68484c09ec44b9f349406c45.mockapi.io/items').then(res => {
+      return res.json();
+    }).then(json => {
+      setItems(json);
+    });
+  }, [])
+
   return (
     <>
-      <Header />
+      {cardOpened ? <Wrapper onClose={() => { setCardOpened(false) }} /> : null}
+      <Header onClickCard={() => { setCardOpened(true) }} />
       <div className="content">
         <h1>Все кроссовки</h1>
-        <div className="d-flex justify-between">
-          {
-            arr.map((obj) => (
-              <Card 
-                title = {obj.name}
-                price = {obj.price}
-              />
-            ))
-          }
+        <div className="d-flex justify-between flex-wrap">
+          {items.map((obj) => (
+            <Card
+              title={obj.name}
+              price={obj.price}
+              imageUrl={obj.imageUrl}
+              onClick={() => console.log(obj)}
+            />
+          ))}
         </div>
       </div>
     </>
