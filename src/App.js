@@ -17,7 +17,10 @@ function App() {
         <div className="d-flex justify-between">
           {
             arr.map((obj) => (
-              <Card />
+              <Card 
+                title = {obj.name}
+                price = {obj.price}
+              />
             ))
           }
         </div>
