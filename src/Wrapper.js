@@ -1,20 +1,24 @@
 import React from 'react';
 
-function Wrapper(props) {
+function Wrapper({ onClose, items = [] }) {
     return (
         <div className="wrapper clear">
             <div className="overlay">
                 <div className="drawer d-flex">
-                    <h2 className="mb-20 d-flex justify-between">Избранное <img onClick={props.onClose} src="./remove.svg" className="removeBtn"></img></h2>
+                    <h2 className="mb-20 d-flex justify-between">Избранное <img onClick={onClose} src="./remove.svg" className="removeBtn"></img></h2>
                     <div className="lol">
-                        <div className="cardItems d-flex align-center">
-                            <img width={155} height={55} src="./1.png" className="mr-10"></img>
-                            <div className="mr-10">
-                                <p className="mb-5">Мужские кроссовки Nike Air Force</p>
-                                <b>$115</b>
-                            </div>
-                            <img src="./remove.svg" className="removeBtn"></img>
-                        </div>
+                        {
+                            items.map((obj) => (
+                                <div className="cardItems d-flex align-center mb-20">
+                                    <img width={155} height={55} src={obj.imageUrl} className="mr-10"></img>
+                                    <div className="mr-10">
+                                        <p className="mb-5">{obj.title}</p>
+                                        <b>{obj.price}</b>
+                                    </div>
+                                    <img src="./remove.svg" className="removeBtn"></img>
+                                </div>
+                            ))
+                        }
                     </div>
                     <ul className="cardTotalBlock">
                         <li className="d-flex">

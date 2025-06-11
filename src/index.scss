@@ -35,13 +35,18 @@ header {
 }
 
 .drawer {
-  position: absolute;
+  position: fixed;
   width: 385px;
   right: 0;
   height: 100%;
   background: #FFFFFF;
   padding: 30px;
   flex-direction: column;
+  
+  .lol{
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
 
   h2 {
     margin: 0;
@@ -101,7 +106,7 @@ header {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
