@@ -1,9 +1,8 @@
 import React from 'react';
 import Card from './Card';
 import Header from './Header';
-import Wrapper from './Wrapper'
-
-const arr = [];
+import Wrapper from './Wrapper';
+import axios from 'axios';
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -12,11 +11,9 @@ function App() {
 
   //берем все айтемы с BackEnd
   React.useEffect(() => {
-    fetch('https://68484c09ec44b9f349406c45.mockapi.io/items').then(res => {
-      return res.json();
-    }).then(json => {
-      setItems(json);
-    });
+    axios.get('https://68484c09ec44b9f349406c45.mockapi.io/items').then(res => {
+      setItems(res.data);
+    })
   }, [])
 
 
@@ -24,8 +21,7 @@ function App() {
   const onAddToCard = (obj) => {
     setCardItems([...cardItems, obj])
   }
-
-
+  
 
   return (
     <>
