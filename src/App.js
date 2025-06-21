@@ -3,7 +3,7 @@ import Card from './Card';
 import Header from './Header';
 import Wrapper from './Wrapper'
 
-const arr = [];
+
 
 function App() {
   const [items, setItems] = React.useState([]);
