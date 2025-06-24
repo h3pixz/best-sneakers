@@ -30,8 +30,13 @@ function App() {
   }
 
   const onRemoveItem = (id) => {
-    axios.delete(`https://68484c09ec44b9f349406c45.mockapi.io/card${id}`);
-    setCardItems((prev) => prev.filter(item => item.id !== id));
+    try {
+      axios.delete(`https://60d62397943aa60017768e77.mockapi.io/card/${id}`);
+      setCardItems((prev) => prev.filter((item) => Number(item.id) !== Number(id)));
+    } catch(error) {
+      alert('Ошибка при удалении из корзины');
+      console.error(error);
+    }
   }
 
   return (
