@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Card.module.scss'
 
-function Card({ title, price, imageUrl, onPlus}) {
+function Card({ title, price, imageUrl, onPlus, id}) {
   //Функция клика на кнопку (!isAdded означает повтор действия => вкл и выкл кнопку)
   const [isAdded, setIsAdded] = React.useState(false);
 

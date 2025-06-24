@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Wrapper({ onClose, items = [] }) {
+function Wrapper({ onClose, items = [], onRemove }) {
     return (
         <div className="wrapper clear">
             <div className="overlay">
@@ -15,7 +15,7 @@ function Wrapper({ onClose, items = [] }) {
                                         <p className="mb-5">{obj.title}</p>
                                         <b>{obj.price}</b>
                                     </div>
-                                    <img src="./remove.svg" className="removeBtn"></img>
+                                    <img onClick={() => onRemove(obj.id)} src="./remove.svg" className="removeBtn" alt="Remove"></img>
                                 </div>
                             ))
                         }
