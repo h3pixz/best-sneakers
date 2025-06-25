@@ -25,8 +25,9 @@ function App() {
   //функция, которая возвращает массив в wrapper
   //post -> отдать обьект, get -> забрать
   const onAddToCard = (obj) => {
-    axios.post('https://68484c09ec44b9f349406c45.mockapi.io/card', obj);
-    setCardItems((prev) => [...prev, obj]);
+    if(cardItems.find((item) => item.id === obj.id)) {
+      setCardItems(prev => prev.filter(item => item.id !== obj.id));
+    }
   }
 
   const onRemoveItem = (id) => {
