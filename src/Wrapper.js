@@ -9,7 +9,7 @@ function Wrapper({ onClose, items = [], onRemove }) {
                     <div className="lol">
                         {
                             items.map((obj) => (
-                                <div className="cardItems d-flex align-center mb-20">
+                                <div key={obj.id} className="cardItems d-flex align-center mb-20">
                                     <img width={155} height={55} src={obj.imageUrl} className="mr-10"></img>
                                     <div className="mr-10">
                                         <p className="mb-5">{obj.title}</p>
